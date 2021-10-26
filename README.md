@@ -1,9 +1,9 @@
-#react-tiny-parallax
+# react-tiny-parallax
 
-##Install
+## Install
 ```
 npm i react-tiny-parallax
 ```
 
-##License
+## License
 MIT
