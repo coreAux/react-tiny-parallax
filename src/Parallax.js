@@ -1,14 +1,14 @@
 import React, { useEffect, useState, useRef } from "react"
 import styled from "styled-components"
 
-export const Container = styled.div`
+const Container = styled.div`
   width: ${({$width}) => $width};
   height: ${({$height}) => $height};
   overflow: hidden;
   position: relative;
 `
 
-export const Image = styled.img.attrs(({$scrollY, $offset, $nudge, $imageWidth, $imageHeight}) => ({
+const Image = styled.img.attrs(({$scrollY, $offset, $nudge, $imageWidth, $imageHeight}) => ({
   style: {
     transform: `translate3d(calc(-50% + ${$imageWidth  ? "0" : "0"}px), ${($scrollY - $offset) * 0.33}px, 0px)`,
   }

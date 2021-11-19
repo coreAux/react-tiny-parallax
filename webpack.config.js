@@ -1,19 +1,18 @@
-const path = require('path');
-
+var path = require('path');
 module.exports = {
-  mode: 'production',
   entry: './src/Parallax.js',
+  mode: 'production',
   output: {
-    path: path.resolve('lib'),
-    filename: 'Parallax.js',
-    libraryTarget: 'commonjs2',
+    path: path.resolve(__dirname),
+    filename: 'index.js',
+    libraryTarget: 'commonjs2'
   },
   module: {
     rules: [
       {
-        test: /.(js|jsx)$/,
+        test: /\.js?$/,
         exclude: /(node_modules)/,
-        loader: 'babel-loader',
+        use: 'babel-loader',
       },
       {
         test: /\.css$/,
@@ -31,18 +30,6 @@ module.exports = {
     }
   },
   externals: {
-    // Don't bundle react or react-dom
-    react: {
-      commonjs: "react",
-      commonjs2: "react",
-      amd: "React",
-      root: "React"
-    },
-    "react-dom": {
-      commonjs: "react-dom",
-      commonjs2: "react-dom",
-      amd: "ReactDOM",
-      root: "ReactDOM"
-    }
+    'react': 'commonjs react'
   }
 };
